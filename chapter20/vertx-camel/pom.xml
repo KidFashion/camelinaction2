@@ -13,7 +13,12 @@
     <artifactId>chapter20-vertx-camel</artifactId>
     <name>Camel in Action 2 :: Chapter 20 :: Vert.x and Apache Camel</name>
 
-    <dependencies>
+  <!-- setup the vert.x verticle name -->
+  <properties>
+    <vertx.verticle>camelinaction.LiveScoreVerticle</vertx.verticle>
+  </properties>
+
+  <dependencies>
 
         <!-- Vert.X -->
         <dependency>
@@ -55,29 +60,39 @@
 
         <finalName>livescore</finalName>
 
-        <plugins>
-            <!-- vert.x maven plugin to generate the fat-jar -->
-            <!-- the example can run with mvn vertx:run -->
-            <plugin>
-                <groupId>io.reactiverse</groupId>
-                <artifactId>vertx-maven-plugin</artifactId>
-                <version>1.0.22</version>
-                <configuration>
-                    <verticle>camelinaction.LiveScoreVerticle</verticle>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>vmp</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>package</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+    <plugins>
+      <!-- vert.x requires Java 8 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
 
-        </plugins>
-    </build>
+      <!-- vert.x maven plugin to generate the fat-jar -->
+      <!-- the example can run with mvn vertx:run -->
+      <plugin>
+        <groupId>io.reactiverse</groupId>
+        <artifactId>vertx-maven-plugin</artifactId>
+        <version>1.0.18</version>
+        <executions>
+          <execution>
+            <id>vmp</id>
+            <goals>
+              <goal>initialize</goal>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <redeploy>true</redeploy>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
 
