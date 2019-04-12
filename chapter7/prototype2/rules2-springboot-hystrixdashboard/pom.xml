@@ -13,10 +13,6 @@
   <artifactId>chapter7-rules2-springboot-hystrixdashboard</artifactId>
   <name>Camel in Action 2 :: Chapter 7 :: Prototype 2 :: Rules Microservice with Hystrix Dashboard</name>
 
-  <properties>
-    <spring-cloud-version>1.4.7.RELEASE</spring-cloud-version>
-  </properties>
-
   <dependencyManagement>
     <dependencies>
       <!-- import Spring Boot before Camel -->
@@ -60,11 +56,11 @@
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
-    <!-- spring-boot hystrix -->
+    <!-- needed to have the activemq jms client -->
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-hystrix</artifactId>
-      <version>${spring-cloud-version}</version>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-camel</artifactId>
+      <version>${activemq-version}</version>
     </dependency>
 
     <!-- camel -->
