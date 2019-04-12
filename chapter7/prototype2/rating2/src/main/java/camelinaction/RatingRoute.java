@@ -9,6 +9,7 @@ public class RatingRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
+        // notice that we have also configured rest in the application.properties file
         restConfiguration()
             .contextPath("api")
             // turn on json binding in rest-dsl
