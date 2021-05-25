@@ -37,7 +37,21 @@
 
     <dependency>
       <groupId>org.apache.camel</groupId>
-      <artifactId>camel-netty-http</artifactId>
+      <artifactId>camel-netty4-http</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-tcnative</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-transport-native-kqueue</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-resolver-dns-native-macos</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
