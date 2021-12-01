@@ -10,4 +10,6 @@
 
  - [Install filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/setup-repositories.html)
 
- 
+## Output
+
+ - [Install Artemis](https://medium.com/@hasnat.saeed/setup-activemq-artemis-on-ubuntu-18-04-76bb4975308b)
