@@ -22,6 +22,8 @@ sudo apt-get update && sudo apt-get install filebeat
 
 Per lanciarlo come systemd: sudo systemctl enable filebeat
 
+filebeat -c /root/camelinaction2/workspace/filebeat/filebeat.yml -e
+
 ## Output
 
  - [Install Artemis](https://medium.com/@hasnat.saeed/setup-activemq-artemis-on-ubuntu-18-04-76bb4975308b)
