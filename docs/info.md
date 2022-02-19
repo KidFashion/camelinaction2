@@ -65,3 +65,5 @@ To use Java16, you also have to add the following to the build.gradle JVMArgs <<
 
 As described at https://camel.apache.org/components/3.15.x/lumberjack-component.html
 
+# Configure AMQP output
+
