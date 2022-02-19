@@ -16,6 +16,13 @@
   <name>Camel in Action 2 :: Chapter 1 :: File Copy Example</name>
 
   <dependencies>
+  <!-- Added to import lumberjack input -->
+    <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-lumberjack</artifactId>
+        <!-- <version>x.x.x</version> -->
+        <!-- use the same version as your Camel core version -->
+    </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
