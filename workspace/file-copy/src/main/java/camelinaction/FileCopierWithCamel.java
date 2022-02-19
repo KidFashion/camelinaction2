@@ -15,7 +15,7 @@ public class FileCopierWithCamel {
             public void configure() {
                 from("lumberjack:0.0.0.0").
                 convertBodyTo(String.class).
-                to("file:data/outbox");
+                to("amqp:destinationName?testConnectionOnStartup=true");
 //                from("file:data/inbox?noop=true").to("file:data/outbox");
             }
         });
