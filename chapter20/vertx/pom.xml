@@ -18,6 +18,11 @@
     <vertx.verticle>camelinaction.LiveScoreVerticle</vertx.verticle>
   </properties>
 
+  <!-- setup the vert.x verticle name -->
+  <properties>
+    <vertx.verticle>camelinaction.LiveScoreVerticle</vertx.verticle>
+  </properties>
+
   <dependencies>
 
         <dependency>
