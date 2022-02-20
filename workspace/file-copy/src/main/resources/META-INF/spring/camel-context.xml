@@ -19,9 +19,10 @@
 
   <camelContext xmlns="http://camel.apache.org/schema/spring">
     <route>
-      <from uri="file:src/data?noop=true"/>
-      <to uri="jms:incomingOrders"/>
+      <from uri="lumberjack:0.0.0.0"/>
+      <convertBodyTo type="java.lang.String"/>
+      <to uri="amqp:destinationName?testConnectionOnStartup=true"/>
     </route>
   </camelContext>
-
+  
 </beans>
