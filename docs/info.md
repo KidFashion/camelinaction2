@@ -74,3 +74,7 @@ As described at https://camel.apache.org/components/3.15.x/amqp-component.html
 Added dependency to pom file
 
 Port 5672
+
+# Java
+
+mvn compile exec:java -Dexec.mainClass=camelinaction.FileCopierWithCamel
