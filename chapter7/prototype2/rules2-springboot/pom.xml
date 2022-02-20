@@ -43,12 +43,13 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-activemq</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.activemq</groupId>
-          <artifactId>activemq-camel</artifactId>
-        </exclusion>
-      </exclusions>
+    </dependency>
+
+    <!-- needed to have the activemq jms client -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-camel</artifactId>
+      <version>${activemq-version}</version>
     </dependency>
 
     <!-- camel -->

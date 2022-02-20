@@ -24,6 +24,11 @@ p183 bottom
 + That means you shouldn’t use the Dynamic Router EIP in the route
 
 
+p272 top
+- Notice that @path and @PathParams map to the partIds
+- Notice that @path and @PathParams map to the cartIds
+
+
 p275
 
 - 3 Start the rules service:
@@ -34,6 +39,22 @@ p275
 
 - 5 Start the rating service:
 + 5 Start the recommendation service:
+
+
+p384
+
+In table 9.9, the description for the mockEndpoints, and mockEndpoints(pattern...) should be updated to not say "in the route" as these methods apply to all endpoints, also for other routes.
+
+
+p454
+
+In the middle the data type should be changed from int to integer:
+
+- .param().name("id").dataType("int").description("The order id").endParam()
++ .param().name("id").dataType("integer").description("The order id").endParam()
+
+- <param name="id" type="path" dataType="int" description="The order id"/>
++ <param name="id" type="path" dataType="integer" description="The order id"/>
 
 
 p510
@@ -48,6 +69,14 @@ And the code snippet in the middle of page 510 needs to use the correct method n
 
 - .onWhen(bean(MyHttpUtil.class, "isIllegalData"))
 + .onWhen(bean(MyHttpUtil.class, "isIllegalDataError"))
+
+
+p673
+
+A colon is missing after http in the code snippet:
+
+- from("jetty:http//0.0.0.0:8080/ping").transform(constant("PONG\n"));
++ from("jetty:http://0.0.0.0:8080/ping").transform(constant("PONG\n"));
 
 
 p831 and 832
