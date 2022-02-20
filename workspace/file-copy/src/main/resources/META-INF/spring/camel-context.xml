@@ -4,15 +4,9 @@
        xmlns:broker="http://activemq.apache.org/schema/core"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+       
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-  <!-- set up ActiveMQ broker -->
-  <broker:broker useJmx="false" persistent="false" brokerName="localhost">
-    <broker:transportConnectors>
-      <broker:transportConnector name="tcp" uri="tcp://localhost:61616"/>
-    </broker:transportConnectors>
-  </broker:broker>
 
   <bean id="jms" class="org.apache.camel.component.jms.JmsComponent">
     <property name="connectionFactory">
@@ -22,12 +16,10 @@
     </property>
   </bean>
 
-  <bean id="downloadLogger" class="camelinaction.DownloadLogger"/>
 
   <camelContext xmlns="http://camel.apache.org/schema/spring">
     <route>
       <from uri="file:src/data?noop=true"/>
-      <process ref="downloadLogger"/>
       <to uri="jms:incomingOrders"/>
     </route>
   </camelContext>
