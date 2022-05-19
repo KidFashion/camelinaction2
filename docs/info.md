@@ -60,7 +60,11 @@ Modify /var/lib/test-broker/etc/jolokia-access.xml (remove localhost from allow-
 
 *I've looked into it and updated the Gradle version of the HelloWorld to be compatible with Java16.
 To use Java16, you also have to add the following to the build.gradle JVMArgs << "--illegal-access=permit"(or something similar for maven)*
-To use Java 17 illegal-access does not work anymore, add-opens needs to be added instead (see bash script attached).
+To use Java 17 illegal-access does not work anymore, add-opens needs to be added instead (see https://github.com/NationalSecurityAgency/ghidra/issues/3355).
+
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.net=ALL-UNNAMED
 
 ## Configure Lumberjack input
 
