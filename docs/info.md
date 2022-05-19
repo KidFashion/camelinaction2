@@ -60,6 +60,7 @@ Modify /var/lib/test-broker/etc/jolokia-access.xml (remove localhost from allow-
 
 *I've looked into it and updated the Gradle version of the HelloWorld to be compatible with Java16.
 To use Java16, you also have to add the following to the build.gradle JVMArgs << "--illegal-access=permit"(or something similar for maven)*
+To use Java 17 illegal-access does not work anymore, add-opens needs to be added instead (see bash script attached).
 
 ## Configure Lumberjack input
 
@@ -77,4 +78,6 @@ Port 5672
 
 # Java
 
-mvn compile exec:java -Dexec.mainClass=camelinaction.FileCopierWithCamel
+Remember you need to be in the folder containing the src folder (i.e. /workspaces/camelinaction2/workspace/file-copy)
+
+mvn compile exec:java -Dexec.mainClass=camelinaction.BeatsToFolderWithCamel
