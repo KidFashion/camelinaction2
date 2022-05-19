@@ -27,4 +27,6 @@ echo "Modify /var/lib/test-broker/etc/jolokia-access.xml (remove localhost from 
 
 echo "/var/lib/test-broker/bin/artemis run"
 
-echo "connect to port 8161: http://0.0.0.0:8161"
+echo "connect to port 8161: http://0.0.0.0:
+
+npx -q codespaces-port <port> 
