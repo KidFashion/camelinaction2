@@ -24,6 +24,19 @@ Per lanciarlo come systemd: sudo systemctl enable filebeat
 
 filebeat -c /root/camelinaction2/workspace/filebeat/filebeat.yml -e
 
+#### Use in codespace
+
+Needs to create /var/lib/filebeat as sudo and chown it to codespace user
+
+ - `sudo mkdir /var/lib/filebeat`
+ - `chown codespace /var/lib/filebeat`
+
+After that filebeat can be launched with:
+
+`filebeat -c /workspaces/camelinaction2/workspace/filebeat/filebeat.yml -e -v`
+
+NB: Ensure to chech that file path in `/workspaces/camelinaction2/workspace/filebeat/filebeat.yml` is still correct
+
 ## Output
 
  - [Install Artemis](https://medium.com/@hasnat.saeed/setup-activemq-artemis-on-ubuntu-18-04-76bb4975308b)

@@ -26,7 +26,7 @@ filebeat.inputs:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /root/camelinaction2/workspace/filebeat/*.log
+    /workspaces/camelinaction2/workspace/filebeat/*.log
     #- /var/log/*.log
     #- c:\programdata\elasticsearch\logs\*
 
