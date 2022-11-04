@@ -4,11 +4,16 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 
+import org.apache.camel.component.amqp.AMQPComponent;
+
 public class BeatsToAMQWithoutTransform {
 
     public static void main(String args[]) throws Exception {
         // create CamelContext
         CamelContext context = new DefaultCamelContext();
+
+        AMQPComponent amqp = AMQPComponent.amqpComponent("amqp://localhost:5672");
+        context.addComponent("amqp", amqp);
 
         // add our route to the CamelContext
         context.addRoutes(new RouteBuilder() {
@@ -22,7 +27,7 @@ public class BeatsToAMQWithoutTransform {
 
         // start the route and let it do its work
         context.start();
-        Thread.sleep(10000);
+        Thread.sleep(60000);
 
         // stop the CamelContext
         context.stop();
