@@ -79,6 +79,8 @@ To use Java 17 illegal-access does not work anymore, add-opens needs to be added
 --add-opens=java.base/java.lang=ALL-UNNAMED
 --add-opens=java.base/java.net=ALL-UNNAMED
 
+NB: User is **test** with the usual password.
+
 ## Configure Lumberjack input
 
 As described at https://camel.apache.org/components/3.15.x/lumberjack-component.html
